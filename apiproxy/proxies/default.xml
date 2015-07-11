@@ -1,0 +1,9 @@
+<ProxyEndPoint name="default">
+	<HTTPProxyConnection>
+		<VirtualHost>default</VirtualHost>
+		<BasePath>/v1/weatherxml</BasePath>
+	</HTTPProxyConnection>
+	<RouteRule name="default">
+		<TargetEndpoint>default</TargetEndpoint>
+	</RouteRule>
+</ProxyEndPoint>

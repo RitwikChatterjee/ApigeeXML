@@ -1,4 +1,12 @@
-<ProxyEndPoint name="default">
+<ProxyEndpoint name="default">
+	<Flows>
+​        <Flow name="forecast">
+			<Condition>
+             (proxy.pathsuffix MatchesPath &quot;/forecastrss&quot;) and 
+                  (request.verb = &quot;GET&quot;)
+			</Condition>
+		</Flow>
+	</Flows>
 	<HTTPProxyConnection>
 		<VirtualHost>default</VirtualHost>
 		<BasePath>/v1/weatherxml</BasePath>
@@ -6,4 +14,4 @@
 	<RouteRule name="default">
 		<TargetEndpoint>default</TargetEndpoint>
 	</RouteRule>
-</ProxyEndPoint>
+</ProxyEndpoint>

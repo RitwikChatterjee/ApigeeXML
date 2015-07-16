@@ -1,0 +1,27 @@
+Apigee Cheat Sheet
+==================
+
+Calling the Python Deploy tools/deploy
+--------------------------------------
+
+../../tools/deploy.py -n $api-name -u $username:$password -o $org-name -h $ApigeeURL -e $environment -p $basePath -d $basedirectory
+
+For e.g.
+F:/Ritwik-All/Ritwik-prac/ApigeeEdge/api-platform-samples/tools/deploy.py -n weatherxml -u ritwik_chatterjee@infosys.com:Apigee01 -o ritwik-chatterjee -h https://api.enterprise.apigee.com -e test -p / -d ./weatherxml >> weatherxml-deploy.log
+
+Calling the Deployment API
+==========================
+
+To get deployments
+HTTP Verb: GET
+https://api.enterprise.apigee.com/v1/organizations/ritwik-chatterjee/apis/conditional-policy/deployments
+Header: 'Accept': 'application/xml'
+
+To Deploy
+HTTP Verb: POST
+https://api.enterprise.apigee.com/v1/organizations/ritwik-chatterjee/apis/conditional-policy/deployments?action=deploy&env=test&revision=4&basepath=\/timer
+Header: 'Accept': 'application/json'
+
+To Undeploy
+HTTP Verb: POST
+https://api.enterprise.apigee.com/v1/organizations/ritwik-chatterjee/apis/conditional-policy/deployments?action=undeploy&env=test&revision=4
